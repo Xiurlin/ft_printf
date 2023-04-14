@@ -6,21 +6,27 @@
 /*   By: drestrep <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 04:41:47 by drestrep          #+#    #+#             */
-/*   Updated: 2022/11/03 05:24:23 by drestrep         ###   ########.fr       */
+/*   Updated: 2023/04/14 07:11:01 by drestrep         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf_header.h"
+#include "ft_printf.h"
 
 void	ft_putnbr(int nbr, int len)
 {
-	size_t	i;
-	char	*n;
+	long int	i;
 
-	i = 0;
-	n = ft_itoa(nbr);
-	while (n[i] != '\0')
+	i = nbr;
+	if (i < 0)
 	{
-		ft_putchar(n[i], len);
+		write(1, "-", 1);
+		i *= -1;
+		len++;
+	}
+	else
+	{
+		if (i > 9)
+			ft_putnbr(i / 10, len);
+		ft_putchar(i % 10 + '0', len);
 	}
 }

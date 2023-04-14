@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putptr.c                                        :+:      :+:    :+:   */
+/*   ft_hexadecimal.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drestrep <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 07:51:41 by drestrep          #+#    #+#             */
-/*   Updated: 2023/04/14 05:50:08 by drestrep         ###   ########.fr       */
+/*   Created: 2022/11/07 06:19:54 by drestrep          #+#    #+#             */
+/*   Updated: 2023/04/14 05:48:26 by drestrep         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putptr(void *ptr, int len)
+void	ft_hexadecimal(int nbr, int len, char c)
 {
-	size_t	nbr;
-	size_t	i;
-	char	*aux;
+	int		i;
 	char	*base;
 
-	nbr = (size_t)ptr;
 	i = 0;
-	aux = NULL;
-	base = "0123456789abcdef";
-	write (1, "0x", 2);
-	len += 2;
-	if (nbr == 0)
+	base = NULL;
+	if (c == 'x')
+		base = "0123456789abcdef";
+	else if (c == 'X')
+		base = "0123456789ABCDEF";
+	if (nbr > 9)
 	{
-		ft_putchar('0', len);
-		return ;
+		ft_hexadecimal(nbr / 10, len, c);
+		nbr = nbr % 10;
+		i++;
 	}
-	while (nbr != 0)
-	{
-		aux[i++] = base[nbr % 16];
-		nbr = nbr / 16;
-		while (nbr == 0 && i >= 0)
-		{
-			ft_putchar(aux[i--], len);
-		}
-	}
+	ft_putchar(base[i], len);
 }
