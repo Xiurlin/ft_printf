@@ -6,14 +6,14 @@
 /*   By: drestrep <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:40:51 by drestrep          #+#    #+#             */
-/*   Updated: 2023/04/14 05:49:37 by drestrep         ###   ########.fr       */
+/*   Updated: 2023/04/15 05:42:31 by drestrep         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c, int len)
+void	ft_putchar(char c, int *len)
 {
 	write (1, &c, 1);
-	len++;
+	(*len)++;
 }

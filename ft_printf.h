@@ -6,7 +6,7 @@
 /*   By: drestrep <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 00:35:24 by drestrep          #+#    #+#             */
-/*   Updated: 2023/04/14 07:30:09 by drestrep         ###   ########.fr       */
+/*   Updated: 2023/04/15 10:10:14 by drestrep         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 # include <stdio.h>
 
 int		ft_printf(char const *str, ...);
-void	ft_datatype(va_list list, char c, int len);
-void	ft_putchar(char c, int len);
-void	ft_putstr(char *str, int len);
-void	ft_putptr(void *ptr, int len);
-void	ft_putnbr(int nbr, int len);
-void	ft_unsigned_int(int var, int len);
-void	ft_hexadecimal(int nbr, int len, char c);
+void	ft_datatype(va_list list, char c, int *len, int *i);
+void	ft_putchar(char c, int *len);
+void	ft_putstr(char *str, int *len);
+void	ft_putptr(size_t ptr, int *len);
+void	ft_putnbr(int nbr, int *len);
+void	ft_unsigned_int(int var, int *len);
+void	ft_hexadecimal(int nbr, int *len, char c);
 
 #endif

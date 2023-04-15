@@ -6,7 +6,7 @@
 /*   By: drestrep <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:02:54 by drestrep          #+#    #+#             */
-/*   Updated: 2023/04/14 07:29:53 by drestrep         ###   ########.fr       */
+/*   Updated: 2023/04/15 10:10:33 by drestrep         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_printf(char const *str, ...)
 		if (str[i] == '%')
 		{
 			i++;
-			ft_datatype(ap, str[i], len);
+			ft_datatype(ap, str[i], &len, &i);
 			i++;
 		}
 		else
@@ -40,14 +40,14 @@ int	ft_printf(char const *str, ...)
 	return (len);
 }
 
-void	ft_datatype(va_list list, char c, int len)
+void	ft_datatype(va_list list, char c, int *len, int *i)
 {
 	if (c == 'c')
 		ft_putchar(va_arg(list, int), len);
 	else if (c == 's')
 		ft_putstr(va_arg(list, char *), len);
 	else if (c == 'p')
-		ft_putptr(va_arg(list, void *), len);
+		ft_putptr(va_arg(list, size_t), len);
 	else if (c == 'i' || c == 'd' )
 		ft_putnbr(va_arg(list, int), len);
 	else if (c == 'u')
@@ -58,4 +58,6 @@ void	ft_datatype(va_list list, char c, int len)
 		ft_hexadecimal(va_arg(list, int), len, 'X');
 	else if (c == '%')
 		ft_putchar('%', len);
+	else
+		(*i)--;
 }

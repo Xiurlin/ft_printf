@@ -6,13 +6,13 @@
 /*   By: drestrep <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 06:19:54 by drestrep          #+#    #+#             */
-/*   Updated: 2023/04/14 05:48:26 by drestrep         ###   ########.fr       */
+/*   Updated: 2023/04/15 11:17:04 by drestrep         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_hexadecimal(int nbr, int len, char c)
+void	ft_hexadecimal(int nbr, int *len, char c)
 {
 	int		i;
 	char	*base;
@@ -25,8 +25,8 @@ void	ft_hexadecimal(int nbr, int len, char c)
 		base = "0123456789ABCDEF";
 	if (nbr > 9)
 	{
-		ft_hexadecimal(nbr / 10, len, c);
-		nbr = nbr % 10;
+		ft_hexadecimal(nbr / 16, len, c);
+		nbr = nbr % 16;
 		i++;
 	}
 	ft_putchar(base[i], len);

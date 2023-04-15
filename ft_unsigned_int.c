@@ -6,13 +6,13 @@
 /*   By: drestrep <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 03:33:01 by drestrep          #+#    #+#             */
-/*   Updated: 2023/04/14 05:50:31 by drestrep         ###   ########.fr       */
+/*   Updated: 2023/04/15 06:05:06 by drestrep         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_unsigned_int(int var, int len)
+void	ft_unsigned_int(int var, int *len)
 {
 	unsigned int	i;
 	char			*base;
