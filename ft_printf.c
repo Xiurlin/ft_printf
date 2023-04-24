@@ -6,7 +6,7 @@
 /*   By: drestrep <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:02:54 by drestrep          #+#    #+#             */
-/*   Updated: 2023/04/15 10:10:33 by drestrep         ###   ########.fr       */
+/*   Updated: 2023/04/23 04:22:05 by drestrep         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ void	ft_datatype(va_list list, char c, int *len, int *i)
 	else if (c == 'u')
 		ft_unsigned_int(va_arg(list, int), len);
 	else if (c == 'x')
-		ft_hexadecimal(va_arg(list, int), len, 'x');
+		ft_hexadecimal(va_arg(list, unsigned int), len, 'x');
 	else if (c == 'X')
-		ft_hexadecimal(va_arg(list, int), len, 'X');
+		ft_hexadecimal(va_arg(list, unsigned int), len, 'X');
 	else if (c == '%')
 		ft_putchar('%', len);
 	else

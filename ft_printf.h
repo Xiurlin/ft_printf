@@ -6,7 +6,7 @@
 /*   By: drestrep <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 00:35:24 by drestrep          #+#    #+#             */
-/*   Updated: 2023/04/15 10:10:14 by drestrep         ###   ########.fr       */
+/*   Updated: 2023/04/23 04:22:23 by drestrep         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ void	ft_putstr(char *str, int *len);
 void	ft_putptr(size_t ptr, int *len);
 void	ft_putnbr(int nbr, int *len);
 void	ft_unsigned_int(int var, int *len);
-void	ft_hexadecimal(int nbr, int *len, char c);
+void	ft_hexadecimal(unsigned int nbr, int *len, char c);
 
 #endif
